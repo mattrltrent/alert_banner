@@ -35,7 +35,7 @@ child:  const  Text("Show alert"),
 
 ## Example Gif 📸
 
-<img  src="https://github.com/mattrltrent/alert_banner/blob/main/resources/example.gif?raw=true"  style="display: inline"/>
+<img src="https://github.com/mattrltrent/alert_banner/blob/main/resources/demo.gif?raw=true" width="300" height="" style="display: inline"/>
 
 ## Additional Info 📣
 
