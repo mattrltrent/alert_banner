@@ -12,14 +12,14 @@ Here is a quick example. Simply call `showAlertBanner(...)`.
 
 ```dart
 TextButton(
-onPressed: () =>  showAlertBanner( // <-- The function!
-context,
-() =>  print("TAPPED"),
-const  ExampleAlertBannerChild(), // <-- Put any widget here you want!
-alertBannerLocation:  AlertBannerLocation.bottom,
-),
-child:  const  Text("Show alert"),
-// .. EDIT MORE FIELDS HERE ...
+    onPressed: () =>  showAlertBanner( // <-- The function!
+    context,
+    () =>  print("TAPPED"),
+    const  ExampleAlertBannerChild(), // <-- Put any widget here you want!
+    alertBannerLocation:  AlertBannerLocation.bottom,
+    ),
+    child:  const  Text("Show alert"),
+    // .. EDIT MORE FIELDS HERE ...
 ),
 ```
 

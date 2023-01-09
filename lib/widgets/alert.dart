@@ -23,7 +23,9 @@ dynamic showAlertBanner(
   overlay = OverlayEntry(
     builder: (context) {
       return Align(
-        alignment: alertBannerLocation == AlertBannerLocation.top ? Alignment.topCenter : Alignment.bottomCenter,
+        alignment: alertBannerLocation == AlertBannerLocation.top
+            ? Alignment.topCenter
+            : Alignment.bottomCenter,
         child: SafeArea(
           top: safeAreaTopEnabled,
           bottom: safeAreaBottomEnabled,
@@ -34,13 +36,17 @@ dynamic showAlertBanner(
             curveScaleDownAnim: curveScaleDownAnim ?? Curves.decelerate,
             curveScaleUpAnim: curveScaleUpAnim ?? Curves.easeOutBack,
             curveTranslateAnim: curveTranslateAnim ?? Curves.ease,
-            durationOfScalingUp: durationOfScalingUp ?? const Duration(milliseconds: 400),
-            durationOfScalingDown: durationOfScalingDown ?? const Duration(milliseconds: 250),
-            durationOfLeavingScreenBySwipe: durationOfLeavingScreenBySwipe ?? const Duration(milliseconds: 1500),
+            durationOfScalingUp:
+                durationOfScalingUp ?? const Duration(milliseconds: 400),
+            durationOfScalingDown:
+                durationOfScalingDown ?? const Duration(milliseconds: 250),
+            durationOfLeavingScreenBySwipe: durationOfLeavingScreenBySwipe ??
+                const Duration(milliseconds: 1500),
             alertBannerLocation: alertBannerLocation,
             maxWidth: maxLength,
             overlay: overlay,
-            duration: durationOfStayingOnScreen ?? const Duration(milliseconds: 3500),
+            duration:
+                durationOfStayingOnScreen ?? const Duration(milliseconds: 3500),
             child: child,
           ),
         ),
@@ -107,7 +113,8 @@ class _OverlayItem extends StatefulWidget {
   State<_OverlayItem> createState() => __OverlayItemState();
 }
 
-class __OverlayItemState extends State<_OverlayItem> with TickerProviderStateMixin {
+class __OverlayItemState extends State<_OverlayItem>
+    with TickerProviderStateMixin {
   // Initialize the translation animations/controllers.
   late AnimationController translateAnimController;
   late Animation translateAnim;
@@ -180,17 +187,23 @@ class __OverlayItemState extends State<_OverlayItem> with TickerProviderStateMix
       offset: Offset(
           0,
           widget.alertBannerLocation == AlertBannerLocation.top
-              ? (translateAnim.value * -MediaQuery.of(context).size.height + (_swipeDy <= 0 ? _swipeDy : 0))
-              : (translateAnim.value * MediaQuery.of(context).size.height + (_swipeDy >= 0 ? _swipeDy : 0))),
+              ? (translateAnim.value * -MediaQuery.of(context).size.height +
+                  (_swipeDy <= 0 ? _swipeDy : 0))
+              : (translateAnim.value * MediaQuery.of(context).size.height +
+                  (_swipeDy >= 0 ? _swipeDy : 0))),
       // Triggers for controlling the animations are handled via a GestureDetector.
       child: GestureDetector(
         onVerticalDragEnd: (details) {
-          if (widget.alertBannerLocation == AlertBannerLocation.top ? _swipeDy < 0 : _swipeDy > 0) {
+          if (widget.alertBannerLocation == AlertBannerLocation.top
+              ? _swipeDy < 0
+              : _swipeDy > 0) {
             reverseAnimEarly();
           }
         },
         onVerticalDragCancel: () {
-          if (widget.alertBannerLocation == AlertBannerLocation.top ? _swipeDy <= 0 : _swipeDy >= 0) {
+          if (widget.alertBannerLocation == AlertBannerLocation.top
+              ? _swipeDy <= 0
+              : _swipeDy >= 0) {
             reverseAnimEarly();
           }
         },
@@ -210,7 +223,9 @@ class __OverlayItemState extends State<_OverlayItem> with TickerProviderStateMix
           child: Container(
             width: double.infinity,
             margin: const EdgeInsets.only(top: 10),
-            constraints: BoxConstraints(maxWidth: widget.maxWidth ?? MediaQuery.of(context).size.width * 0.8),
+            constraints: BoxConstraints(
+                maxWidth:
+                    widget.maxWidth ?? MediaQuery.of(context).size.width * 0.8),
             child: GestureDetector(
               onTap: () => widget.onTap(),
               child: Material(
