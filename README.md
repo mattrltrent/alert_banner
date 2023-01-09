@@ -1,39 +1,46 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 🔥 A powerful & beautiful alert banner that animates a message to the user 🔥
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+- Submit an issue [here](https://github.com/mattrltrent/alert_banner/issues).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+- Create a pull request [here](https://github.com/mattrltrent/alert_banner/pulls).
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- Contact me via email [here](mailto:me@matthewtrent.me).
 
-## Features
+## One simple way to use 📚
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Here is a quick example. Simply call `showAlertBanner(...)`.
 
 ```dart
-const like = 'sample';
+TextButton(
+onPressed: () =>  showAlertBanner( // <-- The function!
+context,
+() =>  print("TAPPED"),
+const  ExampleAlertBannerChild(), // <-- Put any widget here you want!
+alertBannerLocation:  AlertBannerLocation.bottom,
+),
+child:  const  Text("Show alert"),
+// .. EDIT MORE FIELDS HERE ...
+),
 ```
 
-## Additional information
+## Installing 🧑‍🏫
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- Install the package from the pub.
+
+- `flutter pub add alert_banner`
+
+- Import the package.
+
+- `import 'package:alert_banner/exports.dart';`
+
+## Example Gif 📸
+
+<img  src="https://github.com/mattrltrent/alert_banner/blob/main/resources/example.gif?raw=true"  style="display: inline"/>
+
+## Additional Info 📣
+
+- The package is always open to [improvements](https://github.com/mattrltrent/alert_banner/issues), [suggestions](mailto:me@matthewtrent.me), and [additions](https://github.com/mattrltrent/alert_banner/pulls)!
+
+- I'll look through PRs and issues as soon as I can!
+
+- [Learn about me](https://matthewtrent.me).
