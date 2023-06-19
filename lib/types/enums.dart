@@ -25,4 +25,17 @@ enum AlertBannerLocation {
 
     return a[this]!;
   }
+
+  bool get isTop {
+    final a = {
+      AlertBannerLocation.top: true,
+      AlertBannerLocation.bottom: false,
+      AlertBannerLocation.endButtom: false,
+      AlertBannerLocation.endTop: true,
+      AlertBannerLocation.startButtom: false,
+      AlertBannerLocation.startTop: true,
+    };
+
+    return a[this]!;
+  }
 }

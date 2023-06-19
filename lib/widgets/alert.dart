@@ -184,7 +184,7 @@ class __OverlayItemState extends State<_OverlayItem>
     return Transform.translate(
       offset: Offset(
           0,
-          widget.alertBannerLocation == AlertBannerLocation.top
+          widget.alertBannerLocation.isTop
               ? (translateAnim.value * -MediaQuery.of(context).size.height +
                   (_swipeDy <= 0 ? _swipeDy : 0))
               : (translateAnim.value * MediaQuery.of(context).size.height +
@@ -192,14 +192,12 @@ class __OverlayItemState extends State<_OverlayItem>
       // Triggers for controlling the animations are handled via a GestureDetector.
       child: GestureDetector(
         onVerticalDragEnd: (details) {
-          if (widget.alertBannerLocation == AlertBannerLocation.top
-              ? _swipeDy < 0
-              : _swipeDy > 0) {
+          if (widget.alertBannerLocation.isTop ? _swipeDy < 0 : _swipeDy > 0) {
             reverseAnimEarly();
           }
         },
         onVerticalDragCancel: () {
-          if (widget.alertBannerLocation == AlertBannerLocation.top
+          if (widget.alertBannerLocation.isTop
               ? _swipeDy <= 0
               : _swipeDy >= 0) {
             reverseAnimEarly();
@@ -207,7 +205,7 @@ class __OverlayItemState extends State<_OverlayItem>
         },
         onVerticalDragUpdate: (details) {
           if (translateAnim.value != 0) return;
-          if (widget.alertBannerLocation == AlertBannerLocation.top
+          if (widget.alertBannerLocation.isTop
               ? (details.delta.dy <= 0 || _swipeDy < 0)
               : (details.delta.dy >= 0 || _swipeDy > 0)) {
             setState(() {
