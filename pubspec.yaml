@@ -1,6 +1,6 @@
 name: alert_banner
 description: A powerful & beautiful alert banner that animates a message to the user.
-version: 1.0.0
+version: 1.1.0
 homepage: https://matthewtrent.me/
 repository: https://github.com/mattrltrent/alert_banner
 issue_tracker: https://github.com/mattrltrent/alert_banner/issues
