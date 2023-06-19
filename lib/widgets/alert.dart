@@ -23,9 +23,7 @@ dynamic showAlertBanner(
   overlay = OverlayEntry(
     builder: (context) {
       return Align(
-        alignment: alertBannerLocation == AlertBannerLocation.top
-            ? Alignment.topCenter
-            : Alignment.bottomCenter,
+        alignment: alertBannerLocation.align,
         child: SafeArea(
           top: safeAreaTopEnabled,
           bottom: safeAreaBottomEnabled,
@@ -53,7 +51,7 @@ dynamic showAlertBanner(
       );
     },
   );
-  Overlay.of(context)?.insert(overlay);
+  Overlay.of(context).insert(overlay);
 }
 
 class _OverlayItem extends StatefulWidget {
