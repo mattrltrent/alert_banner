@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                   context,
                   () => print("TAPPED"),
                   const ExampleAlertBannerChild(),
-                  alertBannerLocation: AlertBannerLocation.bottom,
+                  alertBannerLocation: AlertBannerLocation.startButtom,
                 ),
                 child: const Text("Show bottom alert"),
                 // .. EDIT MORE FIELDS HERE ...
