@@ -44,3 +44,5 @@ TextButton(
 - I'll look through PRs and issues as soon as I can!
 
 - [Learn about me](https://matthewtrent.me).
+
+![analytics](https://hidden-coast-90561-45544df95b1b.herokuapp.com/api/v1/analytics/?kind=package-alert-banner)
